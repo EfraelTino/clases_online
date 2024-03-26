@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 <!-- CSS General -->
-<link rel="stylesheet" href="nicolas.css">
+<link rel="stylesheet" href="./dashboard.css">
 
 
 <!-- BOOTSTRPA-->

@@ -1,0 +1,192 @@
+<?php
+$title = "Dashboard - NICOLAS ";
+
+include ('./page-master/head.php');
+
+include ('./page-master/header.php');
+include ("./conexion/Nicolas.php");
+session_start();
+$operations = new Nicolas();
+$ultima_vista = null;
+if (!isset ($_SESSION['usuario_autenticado']) || $_SESSION['usuario_autenticado'] !== true) {
+    header("Location: ../login");
+    exit;
+} else {
+    $id_user = $_SESSION['idusuario'];
+}
+
+
+if (isset ($_GET['idcr']) || !empty ($_GET['idcr'])) {
+    // 
+    $id_curso = $_GET['idcr'];
+
+    // primero traigo a la tabla enrollments con su campo id_usuario
+    $get_enrrollments = $operations->getCamposConCondicion('enrollments', 'user_id', $id_user);
+    
+    if (count($get_enrrollments) <= 0) {
+        echo "Este usuario todavia no a visto esta leccion";
+        $ultima_vista = 0;
+    } else {
+        end($get_enrrollments);
+        $ultimo_elemento = current($get_enrrollments); // Obtener el último elemento
+        $ultima_vista = $ultimo_elemento['ultima_leccion_vista_id'];
+    }
+    $tabla1 = "lecciones";
+    $tabla2 = "cursos";
+    $prepare = 'i';
+    $condicion_tb1 = "id_curso";
+    $condicion_tb2 = "id";
+    $condicion = $id_curso;
+    $get_curso = $operations->getJoinCamps($tabla1, $tabla2, $condicion, $prepare, $condicion_tb1, $condicion_tb2);
+
+} else {
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit();
+}
+?>
+<link rel="stylesheet" href="../nicolas.css">
+
+<body>
+    <!-- Section: Design Block -->
+    <section class="w-100 overflow-hidden d-flex justify-content-center align-items-center">
+        <div class="row container h-100 p-3">
+            <!-- MENU -->
+            <div class="col-2">
+                <?php
+                include ('./components/menu.php');
+                ?>
+            </div>
+            <div class="col-10">
+                <div class="row ">
+                    <div class="col-6"></div>
+                    <div class="col-6 m-0 p-0">
+                        <?php include ('./components/profile.php'); ?>
+                    </div>
+                </div>
+                <?php
+                if (!empty ($get_curso)) {
+
+                    $columnas = array_keys($get_curso[0]);
+                    $pos = 0;
+                    foreach ($get_curso as $fila) {
+                        $pos++;
+                        $id_leccion = (int) $fila['id_leccion'];
+                        ?>
+                        <div class="row">
+                            <div class="col-12 mt-4">
+
+                                <div class="col-12 card bg-glass">
+                                    <div class="row justify-content-between align-items-center p-3">
+                                        <div class="col-3">
+                                            <div class="card-img">
+                                                <img src="<?php echo $imagen_curso ?>" alt="<?php echo $fila['titulo']; ?>"
+                                                    class="">
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3>
+                                                        <?php echo $fila['titulo']; ?>
+                                                    </h3>
+                                                    <p class="m-0 p-0">
+                                                        <?php
+                                                        $tabla = "usuarios";
+                                                        $cond = "id";
+                                                        $data = $fila['id_instructor'];
+                                                        $getInstructor = $operations->getCamposConCondicion($tabla, $cond, $data);
+                                                        if (!empty ($getInstructor)) {
+                                                            foreach ($getInstructor as $filai) {
+                                                                echo $filai['nombre'] . " " . $filai['apellido'];
+                                                            }
+                                                        } else {
+                                                            echo "No se encontró Instructor";
+                                                        }
+                                                        ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                            <?php
+
+
+                                            if (isset ($ultima_vista)) {
+                                                // echo $ultima_vista;
+                                                $vista_convertida = (int) $ultima_vista;
+                                                $res_comstilta = $vista_convertida == (int) $id_leccion;
+                                                // echo $vista_convertida;
+                                                if ($ultima_vista == 0) {
+                                                    $primera_leccion_id = $get_curso[0]['id_leccion'];
+                                                    // Si $ultima_vista es 0, habilita solo el enlace de la primera lección
+                                                    if ($pos == 1) {
+                                                        echo '<p> <small>Pendiente</small> </p>';
+                                                    } 
+                                                   
+                                                    else {
+                                                        echo '<p> <small>Pendiente</small> </p>';
+                                                    }
+                                                }
+           
+                                               else if ($id_leccion <= $vista_convertida) {
+                                                    // Recorrer todas las lecciones hasta la última lección vista
+                                                    echo '<p> <small>Visto</small> </p>';
+                                                }else{
+                                                    echo '<p> <small>Pendiente</small> </p>';
+                                                }
+                                            }
+                                            ?>
+                                            <!-- <p>Visto</p> -->
+                                        </div>
+                                        <div class="col-2">
+                                            <?php
+                                            // echo $pos;
+                                            if (isset ($ultima_vista)) {
+                                                // echo $ultima_vista;
+                                                $vista_convertida = (int) $ultima_vista;
+                                                $res_comstilta = $vista_convertida == (int) $id_leccion;
+                                                // echo $vista_convertida;
+                                                if ($ultima_vista == 0) {
+                                                    $primera_leccion_id = $get_curso[0]['id_leccion'];
+                                                    // Si $ultima_vista es 0, habilita solo el enlace de la primera lección
+                                                    if ($pos == 1) {
+                                                        echo '<a href="./verleccion.php?asd=' . $primera_leccion_id . '&eda=' . $id_curso . '">Empezar</a>';
+                                                    } 
+                                                    else {
+                                                        echo '<div class="btn btn-warning" disabled>Pendiente</div>';
+                                                    }
+                                                }
+           
+                                               else if ($id_leccion <= $vista_convertida) {
+                                                    // Recorrer todas las lecciones hasta la última lección vista
+                                                    echo '<a href="./verleccion.php?asd=' . $id_leccion . '&eda=' . $id_curso . '">Continuar</a>';
+                                                }else{
+                                                    echo '<div class="btn btn-warning" disabled>Pendiente</div>';
+                                                }
+                                            }
+                                            ?>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo ' <h3>No se econtraron cursos</h3>';
+                }
+                ?>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>

@@ -1,83 +1,99 @@
 :root {
 
     --bs-primary: #0D3C80 !important;
-    --bs-success: #00f059 !important;
-	--color-light1: rgb(59, 59, 59);
-	--color-light2: #43434390;
-	--color-white: #ffffff;
+    --bs-success: #0ae98a !important;
+    --color-light1: rgb(59, 59, 59);
+    --color-light2: #43434390;
+    --color-white: #ffffff;
 
-	--swiper-theme-color: #FF6600 !important;
-	--swiper-navigation-color: #FF6600 !important;
-	--swiper-pagination-color: #FF6600 !important;
+    --swiper-theme-color: #FF6600 !important;
+    --swiper-navigation-color: #FF6600 !important;
+    --swiper-pagination-color: #FF6600 !important;
 
-	--color-neutro: #494949;
-	--color-black: #000000;
-	--transition150: all 150ms;
-	--transition300: all 300ms;
-	--transition4: all .25s ease;
-	--shadow-general: 0px 10px 15px -9px rgba(0, 0, 0, 0.7);
-	--font-fm: "Poppins", sans-serif;
+    --color-neutro: #494949;
+    --color-black: #000000;
+    --transition150: all 150ms;
+    --transition300: all 300ms;
+    --transition4: all .25s ease;
+    --shadow-general: 0px 10px 15px -9px rgba(0, 0, 0, 0.7);
+    --font-fm: "Poppins", sans-serif;
 
 
 
 }
-.text-primarys{
+
+.text-primarys {
     color: var(--bs-primary) !important;
 }
-.sl-variant{
+
+.sl-variant {
     color: hsl(215, 82%, 28%)
 }
-.text-secondarys{
+
+.text-secondarys {
     color: var(--bs-success) !important;
 }
-.text-blacks{
+
+.text-blacks {
     color: var(--color-black);
 }
-.bg-primarys{
+
+.bg-primarys {
     background: var(--bs-primary) !important;
 }
-.bg-secondarys{
-    background-color:  var(--bs-success) !important;;
+
+.bg-secondarys {
+    background-color: var(--bs-success) !important;
+    ;
 }
-.btn-primary{
-        /* BUTTONS */
-        --bs-btn-color: #fff;
-        --bs-btn-bg: #00f059 !important;
-        --bs-btn-border-color: #00f059 !important;
-        --bs-btn-hover-color: #fff;
-        --bs-btn-hover-bg: #0D3C80 !important;
-        --bs-btn-hover-border-color: #0D3C80 !important;
-        --bs-btn-focus-shadow-rgb: 49,132,253;
-        --bs-btn-active-color: #fff;
-        --bs-btn-active-bg: #00f059 !important;
-        --bs-btn-active-border-color: #00f059 !important;
-        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-        --bs-btn-disabled-color: #fff;
-        --bs-btn-disabled-bg: #0d6efd;
-        --bs-btn-disabled-border-color: #0d6efd;
+
+.btn-primary {
+    /* BUTTONS */
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0ae98a !important;
+    --bs-btn-border-color: #0ae98a !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0D3C80 !important;
+    --bs-btn-hover-border-color: #0D3C80 !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0ae98a !important;
+    --bs-btn-active-border-color: #0ae98a !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
 }
+
 * {
-	box-sizing: border-box;
-	text-decoration: none;
-	font-family: var(--font-fm);
-	color: var(--color-black);
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    color: var(--color-black);
 }
 
 img {
-	width: 100%;
-	display: block;
-	margin: none;
-	transition: var(--transition150);
-	height: auto;
+    width: 100%;
+    display: block;
+    margin: none;
+    transition: var(--transition150);
+    height: auto;
 }
-strong{
-	color: black;
-}
+
+
 .cl-normal {
     width: 1200px;
     margin: auto;
     transition: var(--transition150);
 }
+.bg-body{
+    background-color: #13161c;
+    background-image: radial-gradient(37.88% 68.62% at 50% 0, rgba(10, 233, 138, .3) 0, rgba(0, 124, 71, 0) 80%), radial-gradient(10% 10% at 50% 0, rgba(10, 233, 138, .5) 0, rgba(0, 124, 71, .4) 90%, rgba(0, 124, 71, 0) 0), radial-gradient(100% 28.09% at 100% 10%, rgba(10, 233, 138, .2) 0, rgba(0, 124, 71, .1) 80%, rgba(0, 124, 71, 0) 100%), linear-gradient(180deg, rgba(0, 124, 71, .075) 35.79%, rgba(0, 124, 71, .05) 80%, #13161c), radial-gradient(74.84% 135.56% at 100% 10%, rgba(0, 124, 71, .5) 0, #13161c 80%);
+}
+.bg-principal{
+    background-color: #13161c;
+}
+
 /* body{
     background-color: hsl(218, 41%, 15%);
     background-image: radial-gradient(650px circle at 0% 0%,
@@ -98,31 +114,31 @@ strong{
 .background-radial-gradient {
     background-color: hsl(218, 41%, 15%);
     background-image: radial-gradient(650px circle at 0% 0%,
-        hsl(215, 82%, 35%) 15%,
-        hsl(215, 82%, 30%) 35%,
-        hsl(215, 82%, 20%) 75%,
-        hsl(215, 82%, 19%) 80%,
-        transparent 100%),
-      radial-gradient(1250px circle at 100% 100%,
-        hsl(215, 82%, 45%) 15%,
-        hsl(215, 82%, 30%) 35%,
-        hsl(215, 82%, 20%) 75%,
-        hsl(215, 82%, 19%) 80%,
-        transparent 100%);
-        min-height: 100vh;
-        background-attachment: fixed;
-  }
+            hsl(215, 82%, 35%) 15%,
+            hsl(215, 82%, 30%) 35%,
+            hsl(215, 82%, 20%) 75%,
+            hsl(215, 82%, 19%) 80%,
+            transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+            hsl(215, 82%, 45%) 15%,
+            hsl(215, 82%, 30%) 35%,
+            hsl(215, 82%, 20%) 75%,
+            hsl(215, 82%, 19%) 80%,
+            transparent 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
 
-  #radius-shape-1 {
+#radius-shape-1 {
     height: 220px;
     width: 220px;
     top: -60px;
     left: -130px;
     background: radial-gradient(#0b6c2f, #00f059);
     overflow: hidden;
-  }
+}
 
-  #radius-shape-2 {
+#radius-shape-2 {
     border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
     bottom: -60px;
     right: -110px;
@@ -130,12 +146,64 @@ strong{
     height: 300px;
     background: radial-gradient(#0b6c2f, #00f059);
     overflow: hidden;
-  }
+}
 
-  .bg-glass {
+.bg-glass {
     background-color: hsla(0, 0%, 100%, 0.9) !important;
     backdrop-filter: saturate(200%) blur(25px);
-  }
+}
+.location-ref{
+    display: none;
+}
+.location-cont:hover{
+    background-color: rgba(0, 0, 0, 0.125)
+}
+.location-cont:hover .location-ref{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1400px) {
     .cl-normal {
         width: 900px;

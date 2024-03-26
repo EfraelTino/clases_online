@@ -37,13 +37,15 @@ include('page-master/header.php');
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                     <label class="form-label" for="form3Example1">Nombres</label>
-                      <input placeholder="Escribe tus Nombres..."  type="text" id="nombres" class="form-control"  value="Efrael"  />
+                      <input placeholder="Escribe tus Nombres..."  type="text" id="nombres" class="form-control" />
+                      <!-- <input placeholder="Escribe tus Nombres..."  type="text" id="nombres" class="form-control"  value="Efrael"  /> -->
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                     <label class="form-label" for="form3Example2">Apellidos</label>
-                      <input placeholder="Escribe tus Apellidos..." type="text" id="apellidos" class="form-control"  value="Efrael"/>
+                      <input placeholder="Escribe tus Apellidos..." type="text" id="apellidos" class="form-control" />
+                      <!-- <input placeholder="Escribe tus Apellidos..." type="text" id="apellidos" class="form-control"  value="Efrael"/> -->
                     </div>
                   </div>
                 </div>
@@ -51,17 +53,20 @@ include('page-master/header.php');
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example3">Correo electrónico</label>
-                  <input placeholder="Escribe tu correo electrónico"  type="email" id="correo" class="form-control" value="efrael2001@gmail.com"/>
+                  <input placeholder="Escribe tu correo electrónico"  type="email" id="correo" class="form-control"/>
+                  <!-- <input placeholder="Escribe tu correo electrónico"  type="email" id="correo" class="form-control" value="efrael2001@gmail.com"/> -->
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Contraseña</label>
-                  <input placeholder="Escribe una contraseña" type="password" id="password" class="form-control" autocomplete="new-password" value="1234566"/>
+                  <!-- <input placeholder="Escribe una contraseña" type="password" id="password" class="form-control" autocomplete="new-password" value="1234566"/> -->
+                  <input placeholder="Escribe una contraseña" type="password" id="password" class="form-control" autocomplete="new-password" />
                 </div>
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Repetir contraseña</label>
-                  <input placeholder="Repite la contraseña" type="password" id="repeat_password" class="form-control" autocomplete="new-password"  value="1234566" />
+                  <input placeholder="Repite la contraseña" type="password" id="repeat_password" class="form-control" autocomplete="new-password"  />
+                  <!-- <input placeholder="Repite la contraseña" type="password" id="repeat_password" class="form-control" autocomplete="new-password"  value="1234566" /> -->
                 </div>
 
                 <!-- Submit button -->
