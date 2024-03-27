@@ -6,15 +6,15 @@ if (!isset ($_SESSION['usuario_autenticado']) || $_SESSION['usuario_autenticado'
 } else {
     $id_user = $_SESSION['idusuario'];
 }
-$title = "Dashboard - NICOLAS ";
+$title = "Cursos - DINASTIA DE ÉXITO ";
 
 include ('./page-master/head.php');
-
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 $operations = new Nicolas();
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 ?>
 
 <body class="bg-principal">

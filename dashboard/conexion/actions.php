@@ -201,7 +201,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'desactivarCurso') {
     echo json_encode($response);
 }
 if (isset($_POST['action']) && $_POST['action'] == 'desactivarleccion') {
-    $idleccion = $_POST['idleccion'];
+    $idleccion = $_POST['iduser'];
     try {
         // Actualizar el estado del curso
         $activar = $actions->updateData('lecciones', 'active="0"', 'id_leccion', $idleccion);

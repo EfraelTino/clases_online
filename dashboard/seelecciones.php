@@ -1,9 +1,7 @@
 <?php
-$title = "Lecciones - NICOLAS ";
+$title = "Lección - DINASTIA DE ÉXITO ";
 
 include ('./page-master/head.php');
-
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 session_start();
 $operations = new Nicolas();
@@ -47,6 +45,8 @@ if (isset($_GET['idcr']) || !empty($_GET['idcr'])) {
 }
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 ?>
 
 <body>

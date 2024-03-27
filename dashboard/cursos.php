@@ -9,15 +9,15 @@ if (!isset ($_SESSION['usuario_autenticado']) || $_SESSION['usuario_autenticado'
 
 }
 
-$title = "Dashboard - NICOLAS ";
+$title = "Todos los cursos - DINASTIA DE ÉXITO ";
 
 include ('./page-master/head.php');
-
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 $operations = new Nicolas();
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 $sql = $operations->getCamposConCondicion('usuarios', 'id', $id_user);
 $statu_user = $sql[0]['is_admin'];
 if ($statu_user == 1 || $statu_user == '1') {
@@ -26,12 +26,13 @@ if ($statu_user == 1 || $statu_user == '1') {
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }
+
 ?>
 
 <body class="bg-principal">
     <!-- Section: Design Block -->
     <main class="bg-principal">
-        <div class="row m-0 p-0">
+        <div class="row m-0 p-0 sticky-top">
             <!-- MENU -->
             <?php
             include ('./components/menu.php');
@@ -117,7 +118,7 @@ if ($statu_user == 1 || $statu_user == '1') {
                                                                 <figure class="fig-sd m-0 p-0">
                                                                     <img class="card-img object-fit-cover rounded-bottom-0"
                                                                         src="./assets/img/<?php echo $fila['imagen_curso']; ?>"
-                                                                        style="width:50px;"
+                                                                        style="width:50px; height:50px"
                                                                         alt="<?php echo $fila['titulo_curso']; ?>">
                                                                 </figure>
                                                             </td>

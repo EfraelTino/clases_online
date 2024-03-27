@@ -82,7 +82,7 @@ strong {
 }
 
 .cl-normal {
-  width: 1200px;
+  width: 1300px;
   margin: auto;
   transition: var(--transition150);
 }
@@ -170,7 +170,9 @@ strong {
 .titulo-curso::first-letter {
   text-transform: capitalize;
 }
-
+.btn{
+  cursor: pointer !important;
+}
 .background-radial-gradient {
   background-color: hsl(218, 41%, 15%);
   background-image: radial-gradient(
@@ -265,6 +267,10 @@ strong {
 }
 .overflow_course{
     /* max-height: 100vh; */
+}
+.foto-profile{
+  max-width: 250px;
+  max-height: 250px;
 }
 @media screen and (max-width: 1400px) {
   .cl-normal {

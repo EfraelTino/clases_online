@@ -20,7 +20,18 @@ class Nicolas
     {
         return $this->dbConnect;
     }
-
+    public function executeQuery($query)
+    {
+        $result = $this->dbConnect->query($query);
+        if ($result === false) {
+            die("Error en la consulta: " . $this->dbConnect->error);
+        }
+        return $result;
+    }
+    public function prepare($query)
+    {
+        return $this->dbConnect->prepare($query);
+    }
     public function postInsert($table, $camps, $vals, $bind_param, $data_camps)
     {
 

@@ -1,9 +1,8 @@
 <?php
-$title = "Dashboard - NICOLAS ";
+$title = "Lecciones - DINASTIA DE ÉXITO ";
 
 include ('./page-master/head.php');
 
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 session_start();
 $operations = new Nicolas();
@@ -38,13 +37,18 @@ if (isset($_GET['idcr']) || !empty($_GET['idcr'])) {
     $condicion_tb2 = "id";
     $condicion = $id_curso;
     $get_curso = $operations->getJoinCamps($tabla1, $tabla2, $condicion, $prepare, $condicion_tb1, $condicion_tb2);
-    $orden = $get_curso[0]["orden"];
+    if($get_curso){
+        $orden = $get_curso[0]["orden"];
+    }
+
 } else {
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 ?>
 <?php
 include ('./page-master/js.php');

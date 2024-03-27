@@ -6,9 +6,9 @@ $obtenerUsuario = $operations->getCamposConCondicion($tabla, $condicion, $params
 $obtenerUsuario = $operations->getCamposConCondicion($tabla, $condicion, $params);
 $tipo_user = $obtenerUsuario[0]['is_admin'];
 ?>
-<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark" data-bs-theme="dark">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./">
             <img src="../assets/img/logo_dinastia.webp" alt="" style="width:120px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -28,43 +28,53 @@ $tipo_user = $obtenerUsuario[0]['is_admin'];
                     <?php
                     if ($tipo_user == 1 || $tipo_user == '1') {
                         echo
-                            ' <a class="nav-link" href="">Estudiantes</a>
+                            ' <a class="nav-link ' . $item3 . '" href="./students.php">Estudiantes</a>
                 ';
                     }
                     ?>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ajustes</a>
+                    <a class="nav-link <?php echo $item4 ?>" href="./setting.php">Ajustes</a>
                 </li>
             </ul>
             <ul class="navbar-nav mb-2">
-                <div class="form-group has-search">
-                    <span class="fa fa-search form-control-feedback">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg>
-                    </span>
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </span>
 
-                    <input type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                        class="form-control form_search text-body-tertiary" placeholder="Search"
-                        value="Buscar Curso....">
-                </div>
-                <li class="nav-item dropdown-center">
-                    <a class="nav-link dropdown-toggle bg-white rounded-circle mx-2 text-black" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="../assets/img/carpintero.webp" style="width: 20px;" alt="">
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Cuenta</a></li>
-                        <li><a class="dropdown-item" href="#">Contactar</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
+                            <input type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                class="form-control form_search text-body-tertiary" placeholder="Search"
+                                value="Buscar Curso....">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <li class="nav-item dropdown-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a class="nav-link dropdown-toggle bg-white rounded-circle mx-2 text-black w-auto d-flex justify-content-center align-items-center" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="../assets/img/carpintero.webp" style="width: 20px;" alt="">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Cuenta</a></li>
+                                        <li><a class="dropdown-item" href="#">Contactar</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Salir</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
-                        <li><a class="dropdown-item" href="#">Salir</a></li>
-                    </ul>
-                </li>
+                    </div>
+                </div>
             </ul>
         </div>
     </div>

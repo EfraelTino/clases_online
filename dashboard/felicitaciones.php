@@ -1,9 +1,7 @@
 <?php
-$title = "Felicitaciones - NICOLAS ";
+$title = "Felicitaciones - DINASTIA DE ÉXITO ";
 
 include ('./page-master/head.php');
-
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 session_start();
 if (!isset($_SESSION['usuario_autenticado']) || $_SESSION['usuario_autenticado'] !== true) {

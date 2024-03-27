@@ -1,5 +1,5 @@
 <?php
-$title = "Nombre de la lección - NICOLAS ";
+$title = "Lecciones - DINASTIA DE ÉXITO";
 include ("./conexion/Nicolas.php");
 include ('./page-master/head.php');
 session_start();
@@ -77,6 +77,8 @@ if (!isset($_GET['asd']) || !empty($_GET['asd'])) {
 }
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 ?>
 
 

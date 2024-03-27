@@ -1,8 +1,7 @@
 <?php
-$title = "Agregar curso - NICOLAS ";
+$title = "Agregar lección - DINASTIA DE ÉXITO ";
 include ('./page-master/head.php');
 
-include ('./page-master/header.php');
 include ("./conexion/Nicolas.php");
 session_start();
 
@@ -21,6 +20,8 @@ if (!isset($_SESSION['usuario_autenticado']) || $_SESSION['usuario_autenticado']
 }
 $item1 = "";
 $item2 = "active";
+$item3 = "";
+$item4 = "";
 $sql = $operations->getCamposConCondicion('usuarios', 'id', $id_user);
 $statu_user = $sql[0]['is_admin'];
 if (!$statu_user == 1 || !$statu_user == '1') {
